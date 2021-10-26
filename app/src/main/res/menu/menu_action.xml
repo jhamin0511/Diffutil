@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/add"
+        android:title="추가" />
+    <item
+        android:id="@+id/delete_all"
+        android:title="모두 제거" />
+    <item
+        android:id="@+id/refresh"
+        android:title="초기화" />
+    <item
+        android:id="@+id/mix"
+        android:title="mix" />
+</menu>
