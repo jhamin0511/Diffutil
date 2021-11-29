@@ -10,8 +10,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.github.jhamin0511.diffutil.R
-import com.github.jhamin0511.diffutil.data.dto.User
 import com.github.jhamin0511.diffutil.data.dto.UserCreator
+import com.github.jhamin0511.diffutil.data.dto.UserDto
+import com.github.jhamin0511.diffutil.data.mapper.UserMapper
 import com.github.jhamin0511.diffutil.ui.edit.EditActivity
 import java.util.*
 
@@ -20,23 +21,31 @@ private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity(), UserListener {
 
     private val adapter = UserListAdapter(this)
-    private val dataSource: MutableList<User> = UserCreator.default().toMutableList()
+    private val mapper = UserMapper()
+    private val dataSource: MutableList<UserDto> = UserCreator.default().toMutableList()
     private val userEditResult = registerForActivityResult(StartActivityForResult()) {
         Log.i(TAG, "StartActivityForResult()")
         if (it.resultCode == Activity.RESULT_OK) {
-            val user: User = it.data!!.getParcelableExtra("USER")!!
-            val position = it.data!!.getIntExtra("position", -1)
-            Log.i(TAG, "user position : ${position}")
-            if (position != -1) {
-                dataSource[position] = user
-                val sorted = dataSource.sortedByDescending { value -> value.createdAt }
-                adapter.submitList(sorted)
-            }
+            val userDto: UserDto = it.data!!.getParcelableExtra("USER")!!
+            val item = dataSource.find { data -> data.id == userDto.id }
+            val position = dataSource.indexOf(item)
+            dataSource[position] = userDto
+            submit()
         }
     }
 
     init {
-        adapter.submitList(dataSource.toList())
+        submit()
+    }
+
+    private fun submit() {
+        val list = mapper.toList(dataSource.toList())
+        adapter.submitList(list)
+    }
+
+    private fun submit(commitCallback: Runnable) {
+        val list = mapper.toList(dataSource.toList())
+        adapter.submitList(list, commitCallback)
     }
 
     private lateinit var list: RecyclerView
@@ -62,7 +71,7 @@ class MainActivity : AppCompatActivity(), UserListener {
 //                    val value = dataSource.size + 1
 //                    val items = UserCreator.addMany(value)
 //                    dataSource.addAll(items)
-//                    adapter.submitList(dataSource.toList())
+//                    submit()
 //                }
 //            }
 //        })
@@ -79,40 +88,45 @@ class MainActivity : AppCompatActivity(), UserListener {
         when (item.itemId) {
             R.id.add -> {
                 val value = dataSource.size + 1
-                dataSource.add(0, User(value, value.toString(), value, Date()))
-                adapter.submitList(dataSource.toList()) {
+                dataSource.add(0, UserDto(value, value.toString(), value, Date()))
+                submit{
                     list.smoothScrollToPosition(0)
                 }
             }
             R.id.delete_all -> {
                 dataSource.clear()
-                adapter.submitList(dataSource.toList())
+                submit()
             }
             R.id.refresh -> {
                 dataSource.clear()
                 dataSource.addAll(UserCreator.default())
-                adapter.submitList(dataSource.toList())
+                submit()
             }
             R.id.mix -> {
                 dataSource.reverse()
-                adapter.submitList(dataSource.toList())
+                submit()
             }
         }
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onClickHolder(value: User, position: Int) {
-        val item = dataSource[position]
-        val intent = EditActivity.start(this, position, item)
-        userEditResult.launch(intent)
+    override fun onClickHolder(id: Int) {
+        val item = dataSource.find { it.id == id }
+        if (item != null) {
+            val intent = EditActivity.start(this, item)
+            userEditResult.launch(intent)
+        }
     }
 
-    override fun onLongClickHolder(value: User, position: Int): Boolean {
+    override fun onLongClickHolder(id: Int): Boolean {
         AlertDialog.Builder(this)
             .setTitle("삭제")
             .setPositiveButton(android.R.string.ok) { _, _ ->
-                dataSource.remove(value)
-                adapter.submitList(dataSource.toList())
+                val item = dataSource.find { it.id == id }
+                if (item != null) {
+                    dataSource.remove(item)
+                    submit()
+                }
             }.setNegativeButton(android.R.string.cancel) { _, _ ->
 
             }.show()
