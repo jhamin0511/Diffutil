@@ -8,7 +8,6 @@ import android.view.MenuItem
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.github.jhamin0511.diffutil.R
 import com.github.jhamin0511.diffutil.data.dto.User
@@ -30,7 +29,8 @@ class MainActivity : AppCompatActivity(), UserListener {
             Log.i(TAG, "user position : ${position}")
             if (position != -1) {
                 dataSource[position] = user
-                adapter.submitList(dataSource.toList())
+                val sorted = dataSource.sortedByDescending { value -> value.createdAt }
+                adapter.submitList(sorted)
             }
         }
     }
@@ -112,8 +112,7 @@ class MainActivity : AppCompatActivity(), UserListener {
             .setTitle("삭제")
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 dataSource.remove(value)
-                adapter.submitList(dataSource)
-                adapter.notifyItemRemoved(position)
+                adapter.submitList(dataSource.toList())
             }.setNegativeButton(android.R.string.cancel) { _, _ ->
 
             }.show()

@@ -9,8 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.github.jhamin0511.diffutil.R
 import com.github.jhamin0511.diffutil.data.dto.User
-import java.text.SimpleDateFormat
-import java.util.*
+import com.github.jhamin0511.diffutil.util.DateFormatUtil
 
 private const val TAG = "UserListAdapter"
 
@@ -33,7 +32,7 @@ class UserListAdapter(
     inner class Holder(
         private val view: View
     ) : RecyclerView.ViewHolder(view) {
-        private val format = SimpleDateFormat("yyyy.MM.dd", Locale.getDefault())
+        private val format = DateFormatUtil(DateFormatUtil.YYYY_MM_DD)
         private val name: TextView = view.findViewById(R.id.name)
         private val age: TextView = view.findViewById(R.id.age)
         private val date: TextView = view.findViewById(R.id.date)
@@ -50,6 +49,10 @@ class UserListAdapter(
             age.text = value.age.toString()
             date.text = format.format(value.createdAt)
         }
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return super.getItemViewType(position)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
