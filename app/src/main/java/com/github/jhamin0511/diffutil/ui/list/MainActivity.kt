@@ -39,12 +39,12 @@ class MainActivity : AppCompatActivity(), UserListener {
     }
 
     private fun submit() {
-        val list = mapper.toList(dataSource.toList())
+        val list = mapper.toList(dataSource)
         adapter.submitList(list)
     }
 
     private fun submit(commitCallback: Runnable) {
-        val list = mapper.toList(dataSource.toList())
+        val list = mapper.toList(dataSource)
         adapter.submitList(list, commitCallback)
     }
 
@@ -92,6 +92,10 @@ class MainActivity : AppCompatActivity(), UserListener {
                 submit{
                     list.smoothScrollToPosition(0)
                 }
+            }
+            R.id.add_overlap -> {
+                dataSource.add(UserDto(1, "일", 1, Date()))
+                submit()
             }
             R.id.delete_all -> {
                 dataSource.clear()

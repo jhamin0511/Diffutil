@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "579331812706",
+    "project_id": "diffutil-5d25c",
+    "storage_bucket": "diffutil-5d25c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579331812706:android:911fa84b71c0a3d79e503b",
+        "android_client_info": {
+          "package_name": "com.github.jhamin0511.diffutil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579331812706-dbh2617f8ld5s52nkq7sjg670fsdc60s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBairYJbNjFLDF4pmlIi8IRS73be2TVEBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579331812706-dbh2617f8ld5s52nkq7sjg670fsdc60s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
