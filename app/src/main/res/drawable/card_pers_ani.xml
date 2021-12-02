@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item
+        android:drawable="@drawable/card_pers_ani_01"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/card_pers_ani_02"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/card_pers_ani_03"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/card_pers_ani_04"
+        android:duration="200" />
+    <item
+        android:drawable="@drawable/card_pers_ani_05"
+        android:duration="800" />
+
+</animation-list>

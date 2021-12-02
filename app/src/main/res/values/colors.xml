@@ -7,4 +7,165 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#093261</color>
+    <color name="hiddenColorPrimary">#f44336</color>
+    <color name="colorPrimaryDark">#093261</color>
+    <color name="colorAccent">#0f4486</color>
+    <color name="background">#EDEDED</color>
+    <color name="old_background">#f7f7f7</color>
+
+    <!-- BLACK -->
+    <color name="content">#090909</color>
+    <color name="black_alp80">#50000000</color>
+    <color name="black_30_30_30">#1e1e1e</color>
+    <color name="black_55_55_55">#373737</color>
+    <color name="black_alp_80_0_0_0">#50000000</color>
+
+    <!-- WHITE -->
+    <color name="white_alp_100">#64ffffff</color>
+    <color name="white_alp_99">#99ffffff</color>
+
+    <!-- GRAY -->
+    <color name="disable_bg">#f5f5f5</color>
+    <color name="gray_244_244_244">#F5F5F5</color>
+    <color name="gray_220_220_220">#dcdcdc</color>
+    <color name="gray_bright">@color/gray_220_220_220</color>
+    <color name="gray_200_200_200">#c8c8c8</color>
+    <color name="gray_159_159_159">#9f9f9f</color>
+    <color name="gray">#9f9f9f</color>
+    <color name="gray_138_151_165">#8a97a5</color>
+    <color name="gray_120_120_120">#787878</color>
+    <color name="gray_131_131_131">#838383</color>
+    <color name="gray_dark">@color/gray_131_131_131</color>
+
+    <color name="gray_181_187_193">#E0E0E0</color>
+    <color name="login_line_inactive">@color/gray_181_187_193</color>
+    <color name="inactive">#BDBDBD</color>
+
+    <!-- BLUE -->
+    <color name="mblue">#2196F3</color>
+    <color name="blue_81_178_225">#51b2ff</color>
+    <color name="login_line_active">@color/blue_81_178_225</color>
+    <color name="blue_0_122_225">#007ae1</color>
+    <color name="blue">#007ae1</color>
+    <color name="blue_30_101_191">#1e65bf</color>
+    <color name="blue_3_125_222">#037dde</color>
+    <color name="blue_47_159_255">#2f9fff</color>
+
+    <color name="blue_3_155_229">#039BE5</color>
+    <color name="blue_28_169_192">#1ca9c0</color>
+
+    <color name="blue_30_136_229">#1E88E5</color>
+    <color name="blue_29_93_143">#1d5d8f</color>
+    <color name="blue_dark">@color/blue_29_93_143</color>
+    <color name="blue_14_80_155">#0E509B</color>
+    <color name="blue_3_164_222">#03a4de</color>
+    <color name="blue_light">@color/blue_3_164_222</color>
+    <color name="blue_83_111_144">#536f90</color>
+    <color name="blue_alph">#deedf7</color>
+    <color name="unread">#EDF3F7</color>
+
+    <color name="share_card">#64ffffe0</color>
+
+    <color name="in_limitation">#f2f2f2</color>
+    <!-- RED -->
+    <color name="red">#F44336</color>
+    <color name="red_227_91_87">#E35B57</color>
+    <color name="red_255_88_88">#e65858</color>
+    <color name="red_255_120_120">#ff7878</color>
+    <color name="red_255_225_225">#ffe1e1</color>
+    <color name="red_192_16_16">#c01010</color>
+    <color name="reddark">@color/red_192_16_16</color>
+    <color name="red_203_0_0">#CB0000</color>
+    <color name="cancel">#e65858</color>
+
+    <!-- Orange -->
+    <color name="orange">#FF9800</color>
+
+    <!-- green -->
+    <color name="green">#4CAF50</color>
+
+    <!-- ETC -->
+    <drawable name="selecter_tab_item_off">#f7f7f7</drawable>
+    <color name="departure">#037ad8</color>
+    <color name="destination">#fc5353</color>
+
+    <!-- CARD TYPE -->
+    <color name="pers">#1ca9c0</color>
+    <color name="corp">#037dde</color>
+    <color name="share_corp">#509002</color>
+    <color name="etc">#8498b0</color>
+
+    <color name="psts_background_tab_pressed">#1AFFFFFF</color>
+    <color name="psts_background_tab_pressed_ripple">#AAFFFFFF</color>
+
+    <!-- card_tutorial -->
+    <color name="pers_title">#0094ae</color>
+    <color name="corp_title">#037dde</color>
+    <color name="none_title">#d0d0d0</color>
+
+    <!--  region Report  -->
+    <color name="report_title">#1d5d8f</color>
+    <color name="report_amount">#373737</color>
+    <color name="report_disable">#9f9f9f</color>
+
+    <color name="report_ready">#1b64b9</color>
+    <color name="report_sent">#95b941</color>
+    <color name="report_approved">#0b8672</color>
+    <color name="report_refund_ready">#1b64b9</color>
+    <color name="report_refunded">#9c9c9c</color>
+    <color name="report_all_done">#ffffff</color>
+    <color name="report_all_done_text">#7b7b7b</color>
+    <!--  endregion  -->
+
+    <!-- OLD -->
+    <color name="report_state_ready">#1b64b9</color>
+    <color name="report_state_sent">#95b941</color>
+    <color name="report_state_approved">#0b8672</color>
+    <color name="report_state_refund_ready">#1b64b9</color>
+    <color name="report_state_refunded">#9c9c9c</color>
+    <color name="report_state_all_done">#ffffff</color>
+    <color name="report_state_all_done_text">#7b7b7b</color>
+    <color name="report_state_tax">#0b8672</color>
+
+
+    <color name="line">#E9E9E9</color>
+
+    <color name="report_empty">#093261</color>
+    <color name="report_empty_def">#989898</color>
+
+    <color name="expense_transaction">#f3f3f3</color>
+
+    <!-- region Expense Budget -->
+    <color name="expense_budget_default">#787878</color>
+    <color name="expense_budget_exceeded">#EE5150</color>
+    <!-- endregion -->
+
+    <!-- region Finance -->
+    <color name="finance_personal">#1CA9C0</color>
+    <color name="finance_corporation">#037DDE</color>
+    <color name="finance_shared">#509002</color>
+    <color name="finance_etc">#8498B0</color>
+    <color name="finance_selected">#DEEDF7</color>
+    <!-- endregion -->
+
+    <color name="feed_line">#dbe3ec</color>
+    <color name="feed_excess">#d73b36</color>
+    <color name="feed_default">#666666</color>
+
+    <color name="sms_confirm_disable">#cfd7e2</color>
+    <color name="sms_confirm_enable">#037dde</color>
+    <color name="apply">#a9b7c7</color>
+
+    <color name="progress_limit">#E22222</color>
+    <color name="progress_warming">#FF9800</color>
+    <color name="progress_normal">#a1adba</color>
+
+    <color name="amount">#373737</color>
+    <color name="amount_minus">#e65858</color>
+
+    <color name="account_inactive">@color/gray</color>
+    <color name="account_active">#047DE0</color>
+    <color name="account_error">#FF5959</color>
 </resources>

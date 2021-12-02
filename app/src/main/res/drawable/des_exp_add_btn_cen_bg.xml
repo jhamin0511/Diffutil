@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/des_exp_add_btn_cen_fake_bg" android:state_selected="true"/>
+
+    <item android:state_selected="false">
+        <shape>
+            <solid android:color="#0068bf" />
+            <corners android:radius="2000dp" />
+        </shape>
+    </item>
+
+</selector>
